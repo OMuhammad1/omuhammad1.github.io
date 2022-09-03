@@ -23,7 +23,7 @@ function PageTransition() {
             selButtons.forEach((btn) => {
                 btn.classList.remove('active')
             })
-            e.target.classList.add('active')
+            // (removes bug) e.target.classList.add('active')
             //hide other sections 
             sections.forEach((section) => {
                 section.classList.remove('active')
