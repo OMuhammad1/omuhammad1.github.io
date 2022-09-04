@@ -5,7 +5,7 @@
     list-style: none;
 }
 
-//variables to swtich between light and dark mode
+//variables for color
 :root{
     --color-primary: #191d2b;
     --color-secondary: #27AE60;
@@ -65,21 +65,18 @@ section{
 .sec1{ 
     display: none;
     transform: translateY(0) scale(1);
-    background-color: var(--color-primary); 
 
 }
 
 .sec2{ 
     display: none;
     transform: translateY(0) scale(1);
-    background-color: blue !important;
 
 }
 
 .sec3{ 
     display: none;
     transform: translateY(0) scale(1);
-    background-color: purple;
 
 }
 
@@ -146,4 +143,153 @@ section{
             pointer-events: none;
         }
     }
+}
+
+
+//header content style 
+.header-content{
+    display: grid;
+    //2 columns
+    grid-template-columns: repeat(2,1fr);
+    height: 100%;
+    .left-header {
+        display: flex;
+        align-items: center;
+        //relative cause there will be a shape behind it 
+        position: relative;
+        .h-shape{
+            transition: all 0.4s ease-in-out;
+            width: 65%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            //behind img
+            z-index: -1;
+            //creates shape (clip path on google will help)
+            clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+        }
+        .image { 
+            border-radius: var(--br-sm-2);
+            height: 90%;
+            width: 70%;
+            margin-left: 4rem;
+            background-color: var(--color-black);
+            transition: all 0.4s ease-in-out;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.4s ease-in-out;
+                border-radius: var(--br-sm-2);
+                filter: grayscale(0);
+                &:hover{
+                    filter: grayscale(100%);
+    
+                }
+            }
+        }
+    }
+    .right-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 10rem;
+        .name{
+            font-size: 2.3rem;
+            span {
+                color: var(--color-secondary);
+            }
+        }
+        p{ 
+            margin: 1.5 rem 0;
+            //spacing of text between lines
+            line-height: 2rem;
+        }
+    }
+}
+
+
+//independent components (for button, )
+.btn-container {
+    display: flex;
+    align-self: flex-start;
+    margin-top: 1rem;       
+}
+.main-btn {
+    border-radius: 30px;
+    background-color: var(--color-white);
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 1rem;
+    width: 45px;
+    height: 45px;
+
+    .btn-icon {
+        background-color: var(--color-grey-4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem;
+    }
+    .btn-icon2 {
+        background-color: var(--color-grey-4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 0.4rem;
+
+    }
+    .btn-icon3 {
+        background-color: var(--color-grey-4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+
+
+    }
+    .btn-icon:hover {
+        background-color: var(--color-secondary);
+        transform: translateY(0);
+        transition: all 1.5s ease-out;
+    }
+    .btn-icon2:hover {
+        background-color: var(--color-secondary);
+        transform: translateY(0);
+        transition: all 1.5s ease-out;
+    }
+    .btn-icon3:hover {
+        background-color: var(--color-secondary);
+        transform: translateY(0);
+        transition: all 1.5s ease-out;
+    }
+
+   /* &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        //start off at the right and move to the left to create cool effect 
+        transform: translateX(100%);
+        transition: all 0.4s ease-out;
+        z-index: -1;
+    }
+    &:hover{
+        &:before {
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            transform: translateX(0);
+            transition: all 0.4s ease-out;
+        }
+    } */
 }
