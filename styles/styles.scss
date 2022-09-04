@@ -219,7 +219,6 @@ section{
 }
 .main-btn {
     border-radius: 30px;
-    background-color: var(--color-white);
     color: inherit;
     font-weight: 600;
     position: relative;
@@ -259,18 +258,18 @@ section{
     }
     .btn-icon:hover {
         background-color: var(--color-secondary);
-        transform: translateY(0);
-        transition: all 1.5s ease-out;
+        transform: scale(1.25);
+        transition: all 0.5s ease-out;
     }
     .btn-icon2:hover {
         background-color: var(--color-secondary);
-        transform: translateY(0);
-        transition: all 1.5s ease-out;
+        transform: scale(1.25);
+        transition: all 0.5s ease-out;
     }
     .btn-icon3:hover {
         background-color: var(--color-secondary);
-        transform: translateY(0);
-        transition: all 1.5s ease-out;
+        transform: scale(1.25);
+        transition: all 0.5s ease-out;
     }
 
    /* &:before {

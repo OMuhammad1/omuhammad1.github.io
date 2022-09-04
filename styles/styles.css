@@ -204,7 +204,6 @@ section {
 
 .main-btn {
   border-radius: 30px;
-  background-color: var(--color-white);
   color: inherit;
   font-weight: 600;
   position: relative;
@@ -260,16 +259,16 @@ section {
 }
 .main-btn .btn-icon:hover {
   background-color: var(--color-secondary);
-  transform: translateY(0);
-  transition: all 1.5s ease-out;
+  transform: scale(1.25);
+  transition: all 0.5s ease-out;
 }
 .main-btn .btn-icon2:hover {
   background-color: var(--color-secondary);
-  transform: translateY(0);
-  transition: all 1.5s ease-out;
+  transform: scale(1.25);
+  transition: all 0.5s ease-out;
 }
 .main-btn .btn-icon3:hover {
   background-color: var(--color-secondary);
-  transform: translateY(0);
-  transition: all 1.5s ease-out;
+  transform: scale(1.25);
+  transition: all 0.5s ease-out;
 }/*# sourceMappingURL=styles.css.map */
