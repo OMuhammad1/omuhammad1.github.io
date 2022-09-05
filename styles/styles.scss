@@ -263,7 +263,6 @@ section{
     }
 
     .left-about {
-        padding-right: 2rem;
         transform: translateX(-50px);
         p{
             line-height: 2rem;
@@ -278,11 +277,11 @@ section{
 }
 
 .about-stats {
-    padding-bottom: 4rem;
+    padding-bottom: 5rem;
     .progress-bars {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-gap: 2rem;
+        grid-gap: 1rem;
         .progress-bar {
             display: flex;
             flex-direction: column;
@@ -318,10 +317,102 @@ section{
                 .java {
                     width: 85%;
                 }
+                .c {
+                    width: 81%;
+                }
+                .js {
+                    width: 80%;
+                }
+                .htmlcss {
+                    width: 79%;
+                }
+                .react {
+                    width: 75%;
+                }
+                .node {
+                    width: 75%;
+                }
+                .swift {
+                    width: 65%;
+                }
             }
         }
     }
 }
+
+.stat-title {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1.5rem 0;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        left:50%;
+        top: 0;
+        width: 40%;
+        height: 1px;
+        background-color: var(--color-grey-5);
+        transform: translateX(-50%);
+    }
+}
+
+//timeline 
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+    padding-bottom: 3rem;
+    .timeline-item {
+        position: relative;
+        padding-left: 2rem;
+        border-left: 1px solid var(--color-grey-5);
+        .timeline-icon {
+            position: absolute;
+            left: -26.5px;
+            top: 0;
+            background-color: var(--color-secondary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+                font-size: 1.3rem;
+            }
+        }
+        .tl-duration {
+            padding: 0.2rem 0.6rem;
+            background-color: var(--color-grey-5);
+            border-radius: 15px;
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+
+        }
+        h5 {
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            span {
+                color: var(--color-grey-2);
+                font-weight: 500;
+                font-size: 0.8rem;
+            }
+        }
+        p {
+            color: var(--color-grey-2);
+            font-size: 0.2rem;
+        }
+    }
+}
+
+
+
 
 .abt-btn {
     display: inline-block;
