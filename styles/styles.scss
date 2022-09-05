@@ -219,7 +219,8 @@ section{
     .right-about {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-gap: 2rem;
+        grid-gap: 1rem;
+        transform: translatex(75px);
         .about-item{
             border: 1px solid var(--color-grey-5);
             border-radius: 5px;
@@ -270,7 +271,7 @@ section{
             color: var(--color-grey-1);
         }
         h2 {
-            font-size: 2rem;
+            font-size: 1.9rem;
             text-transform: uppercase;
         }
     }
