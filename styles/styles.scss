@@ -8,7 +8,7 @@
 //variables for color
 :root{
     --color-primary: #191d2b;
-    --color-secondary: #27AE60;
+    --color-secondary: #1774e6;
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -18,8 +18,26 @@
     --color-grey-4: #454e56;
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
+    --btn-color: #454a57;
     --br-sm-2: 14px;
     --box-shadow-1: 0 3px 15px rgba(0,0,0,0.2)
+
+}
+
+//light mode
+.light-mode {
+    --color-primary: #e7e6e6;
+    --color-secondary: #8566f5;
+    --color-white: #454e56;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #6c7983;
+    --color-grey-2: #6c7983;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #f8f8f8;
+    --color-grey-6: #12181b;
+    --btn-color: #c6b8f9;
 
 }
 
@@ -80,13 +98,6 @@ section{
 
 }
 
-.sec4{ 
-    display: none;
-    transform: translateY(0) scale(1);
-    background-color: pink;
-
-}
-
 .active {
     display: block;
     animation: scaleAnim 1s ease-in-out;
@@ -141,6 +152,31 @@ section{
             color: var(--color-grey-2);
             pointer-events: none;
         }
+    }
+}
+
+//theme button
+.theme-btn {
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    background-color: var(--color-grey-4);
+    border-radius: 50%;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+    transition: all 0.1 ease-in-out;
+    &:active {
+        transform: translateY(-2.5px);
+    }
+    i {
+        font-size: 1.4rem;
+        color: var(--color-grey-2);
+        pointer-events: none;
     }
 }
 
@@ -534,14 +570,14 @@ section{
     height: 45px;
 
     .btn-icon {
-        background-color: var(--color-grey-4);
+        background-color: var(--btn-color);
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0.7rem;
     }
     .btn-icon2 {
-        background-color: var(--color-grey-4);
+        background-color: var(--btn-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -550,7 +586,7 @@ section{
 
     }
     .btn-icon3 {
-        background-color: var(--color-grey-4);
+        background-color: var(--btn-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -617,4 +653,11 @@ section{
             font-size: 5.5rem;
         }
     }
+}
+
+.contact {
+    font-size: 0.5rem;
+    bottom: 2%;
+    right: 500px;
+    color: var(--color-secondary);
 }
