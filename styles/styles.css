@@ -5,6 +5,7 @@
   list-style: none;
 }
 
+/*Variables*/
 :root {
   --color-primary: #191d2b;
   --color-secondary: #1774e6;
@@ -22,6 +23,7 @@
   --box-shadow-1: 0 3px 15px rgba(0,0,0,0.2) ;
 }
 
+/*Light mode*/
 .light-mode {
   --color-primary: #e7e6e6;
   --color-secondary: #8566f5;
@@ -53,11 +55,12 @@ a {
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--color-white);
   overflow: hidden;
 }
 
+/*Sections on top of eachotehr*/
 section {
   min-height: 100vh;
   width: 100%;
@@ -110,6 +113,7 @@ section {
   }
 }
 
+/*Controls*/
 .controls {
   position: fixed;
   z-index: 10;
@@ -147,6 +151,7 @@ section {
   pointer-events: none;
 }
 
+/*Theme*/
 .theme-btn {
   top: 5%;
   right: 3%;
@@ -171,10 +176,11 @@ section {
   pointer-events: none;
 }
 
+/*header content style*/
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
+  min-height: 100vh;
 }
 .header-content .left-header {
   display: flex;
@@ -190,6 +196,7 @@ section {
   left: 0;
   top: 0;
   z-index: -1;
+  /* creates shape (clip path on google will help)*/
   -webkit-clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
           clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
 }
@@ -230,6 +237,7 @@ section {
   line-height: 2rem;
 }
 
+/*About*/
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -376,6 +384,7 @@ section {
   transform: translateX(-50%);
 }
 
+/*Timeline*/
 .timeline {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -427,6 +436,7 @@ section {
   font-size: 0.2rem;
 }
 
+/*Portfolio*/
 .port-text {
   padding: 2rem 0;
   text-align: center;
@@ -509,12 +519,14 @@ section {
   transform: scale(1);
 }
 
+/*Other*/
 .abt-btn {
   display: inline-block;
   -moz-column-count: 2;
        column-count: 2;
 }
 
+/*independent components*/
 .btn-container {
   display: flex;
   align-self: flex-start;
@@ -534,25 +546,6 @@ section {
   margin-right: 1rem;
   width: 45px;
   height: 45px;
-  /* &:before {
-       content: '';
-       position: absolute;
-       top: 0;
-       right: 0;
-       //start off at the right and move to the left to create cool effect 
-       transform: translateX(100%);
-       transition: all 0.4s ease-out;
-       z-index: -1;
-   }
-   &:hover{
-       &:before {
-           width: 100%;
-           height: 100%;
-           background-color: var(--color-secondary);
-           transform: translateX(0);
-           transition: all 0.4s ease-out;
-       }
-   } */
 }
 .main-btn .btn-icon {
   background-color: var(--btn-color);
@@ -621,4 +614,95 @@ section {
   bottom: 2%;
   right: 500px;
   color: var(--color-secondary);
+}
+
+@media screen and (max-width: 850px) {
+  header {
+    padding: 0;
+  }
+  header .right-header {
+    padding: 2rem !important;
+  }
+  .theme-btn {
+    width: 50px;
+    height: 50px;
+  }
+  .header-content {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .left-header .h-shape {
+    display: none;
+  }
+  .right-header {
+    grid-row: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .right-header .name {
+    font-size: 2.5rem !important;
+  }
+  .header-content .left-header .image {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-container .right-about {
+    grid-template-columns: 1fr;
+    padding-top: 2.5rem;
+    transform: translatex(-50px);
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .about-stats .progress-bars {
+    grid-template-columns: 1fr;
+  }
+  .portfolios {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+  .section {
+    padding: 2rem 3.5rem;
+  }
+  .main-title h2 {
+    font-size: 2rem;
+  }
+  .main-title h2 span {
+    font-size: 2.5rem;
+  }
+  .main-title h2 .bg-text {
+    font-size: 2.5rem;
+  }
+  .controls {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--color-grey-5);
+  }
+  .controls .control {
+    margin: 1rem 1rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main-title h2 {
+    font-size: 2rem;
+  }
+  .main-title h2 span {
+    font-size: 2.5rem;
+  }
+  .main-title h2 .bg-text {
+    font-size: 2.5rem;
+  }
+  .portfolios {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 6rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

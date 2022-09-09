@@ -5,7 +5,7 @@
     list-style: none;
 }
 
-//variables for color
+/*Variables*/
 :root{
     --color-primary: #191d2b;
     --color-secondary: #1774e6;
@@ -24,7 +24,7 @@
 
 }
 
-//light mode
+/*Light mode*/
 .light-mode {
     --color-primary: #e7e6e6;
     --color-secondary: #8566f5;
@@ -58,12 +58,14 @@ a{
 }
 
 header{
-    height: 100vh;
+    min-height: 100vh;
     color: var(--color-white);
     overflow: hidden;
+
+
 }
 
-//all sections laying on top of eachother
+/*Sections on top of eachotehr*/
 section{
     min-height: 100vh;
     width: 100%;
@@ -74,7 +76,6 @@ section{
 }
 
 .section {
-    //want it to be offscreen
     transform: translateY(-100%) scale(0);
     transition: all .4s ease-in-out;
     background-color: var(--color-primary);
@@ -101,7 +102,6 @@ section{
 .active {
     display: block;
     animation: scaleAnim 1s ease-in-out;
-    //creates the animation (from top to bottom)
     @keyframes scaleAnim {
         0% {
             transform: translateY(-100%) scaleY(0);
@@ -113,7 +113,7 @@ section{
     }
 }
 
-//controls 
+/*Controls*/
 .controls {
     position: fixed;
     z-index: 10;
@@ -121,13 +121,10 @@ section{
     right: 3%;
     display: flex;
     flex-direction: column;
-    //center 4 icons 'perfectly'
     align-items: center;
     justify-content: center;
-    //center in y
     transform: translateY(-50%);
     .active-btn {
-        //important empahsizes that styling, overides previous ones
         background-color: var(--color-secondary) !important;
         transition: all 0.4s ease-in-out;
         i{ 
@@ -155,7 +152,7 @@ section{
     }
 }
 
-//theme button
+/*Theme*/
 .theme-btn {
     top: 5%;
     right: 3%;
@@ -181,16 +178,14 @@ section{
 }
 
 
-//header content style 
+/*header content style*/
 .header-content{
     display: grid;
-    //2 columns
     grid-template-columns: repeat(2,1fr);
-    height: 100%;
+    min-height: 100vh;
     .left-header {
         display: flex;
         align-items: center;
-        //relative cause there will be a shape behind it 
         position: relative;
         .h-shape{
             transition: all 0.4s ease-in-out;
@@ -200,9 +195,8 @@ section{
             position: absolute;
             left: 0;
             top: 0;
-            //behind img
             z-index: -1;
-            //creates shape (clip path on google will help)
+            /* creates shape (clip path on google will help)*/
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
         }
         .image { 
@@ -240,16 +234,14 @@ section{
         }
         p{ 
             margin: 1.5 rem 0;
-            //spacing of text between lines
             line-height: 2rem;
         }
     }
 }
 
-//About section
+/*About*/
 .about-container{
     display: grid;
-    //two columns of equal sizes
     grid-template-columns: repeat(2,1fr);
     padding-top: 3.5rem;
     padding-bottom: 5rem;
@@ -396,7 +388,7 @@ section{
     }
 }
 
-//timeline 
+/*Timeline*/
 .timeline {
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -449,7 +441,7 @@ section{
     }
 }
 
-//Porfolios
+/*Portfolio*/
 .port-text {
     padding: 2rem 0;
     text-align: center;
@@ -540,7 +532,7 @@ section{
 }
 
 
-//other
+/*Other*/
 .abt-btn {
     display: inline-block;
     column-count: 2;
@@ -549,7 +541,7 @@ section{
 
 
 
-//independent components 
+/*independent components*/
 .btn-container {
     display: flex;
     align-self: flex-start;
@@ -609,26 +601,6 @@ section{
         transform: scale(1.25);
         transition: all 0.5s ease-out;
     }
-
-   /* &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        //start off at the right and move to the left to create cool effect 
-        transform: translateX(100%);
-        transition: all 0.4s ease-out;
-        z-index: -1;
-    }
-    &:hover{
-        &:before {
-            width: 100%;
-            height: 100%;
-            background-color: var(--color-secondary);
-            transform: translateX(0);
-            transition: all 0.4s ease-out;
-        }
-    } */
 }
 
 .main-title {
@@ -661,3 +633,5 @@ section{
     right: 500px;
     color: var(--color-secondary);
 }
+
+@import './media'
