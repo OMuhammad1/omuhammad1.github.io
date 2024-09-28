@@ -42,6 +42,27 @@ function PageTransition() {
         element.classList.toggle('light-mode')
     })
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const text = "Omar Muhammad.";
+        const nameElement = document.getElementById("name");
+        let index = 0;
+    
+        function typeEffect() {
+            if (index < text.length) {
+                nameElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 150); // Adjust the speed by changing this value
+            } else {
+                // Stop the blinking effect after typing is done
+                nameElement.style.borderRight = "none";
+            }    
+        }
+    
+        typeEffect();
+    });
+
 }
+
+
 
 PageTransition();
